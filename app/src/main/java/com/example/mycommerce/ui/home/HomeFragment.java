@@ -42,7 +42,7 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         recyclerView = root.findViewById(R.id.homeRecyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
+        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false));
 
         recyclerView.setHasFixedSize(true);
         itemArrayList = new ArrayList<>();
@@ -54,7 +54,7 @@ public class HomeFragment extends Fragment {
             Item item = new Item(names[i], images[i]);
             itemArrayList.add(item);
         }
-    itemAdapter.notifyDataSetChanged();
+        itemAdapter.notifyDataSetChanged();
 
 
 
